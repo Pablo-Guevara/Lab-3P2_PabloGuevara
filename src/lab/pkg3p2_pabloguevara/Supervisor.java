@@ -14,6 +14,37 @@ public class Supervisor extends Empleados{
     public Supervisor() {
     }
 
+    public Supervisor(String nombre, String apellido, float salario, String nacionalidad) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.salario = salario;
+        this.nacionalidad = nacionalidad;
+    }
+
+    public Supervisor(String nombre, String apellido, float salario, String nacionalidad, String nomUsuario, String contraseña) {
+        super(nomUsuario, contraseña);
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.salario = salario;
+        this.nacionalidad = nacionalidad;
+    }
+
+    public Supervisor(String nombre, String apellido, float salario, String nacionalidad, String rango, String nomUsuario, String contraseña) {
+        super(rango, nomUsuario, contraseña);
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.salario = salario;
+        this.nacionalidad = nacionalidad;
+    }
+
+    public Supervisor(String nombre, String apellido, float salario, String nacionalidad, String rango) {
+        super(rango);
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.salario = salario;
+        this.nacionalidad = nacionalidad;
+    }
+
     public Supervisor(String nomUsuario, String contraseña) {
         super(nomUsuario, contraseña);
     }

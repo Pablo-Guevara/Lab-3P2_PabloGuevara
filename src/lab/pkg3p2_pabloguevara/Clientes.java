@@ -15,6 +15,23 @@ public class Clientes extends Personas{
     public Clientes() {
     }
 
+    public Clientes(String nombre, String apellido, float salario, String nacionalidad, String direcDomicilio, String nomUsuario, String contraseña) {
+        super(nomUsuario, contraseña);
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.salario = salario;
+        this.nacionalidad = nacionalidad;
+        this.direcDomicilio = direcDomicilio;
+    }
+
+    public Clientes(String nombre, String apellido, float salario, String nacionalidad, String direcDomicilio) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.salario = salario;
+        this.nacionalidad = nacionalidad;
+        this.direcDomicilio = direcDomicilio;
+    }
+
     public Clientes(String nomUsuario, String contraseña) {
         super(nomUsuario, contraseña);
     }

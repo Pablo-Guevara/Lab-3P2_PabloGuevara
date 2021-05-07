@@ -30,7 +30,7 @@ public class Personas {
 
     @Override
     public String toString() {
-        return "Personas{" + "nomUsuario=" + nomUsuario + ", contrase\u00f1a=" + contraseña + '}';
+        return "Personas{" + "nomUsuario=" + nomUsuario + ", contraseña=" + contraseña + '}';
     }
     
     
