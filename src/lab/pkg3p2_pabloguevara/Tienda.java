@@ -1,5 +1,7 @@
 package lab.pkg3p2_pabloguevara;
 
+import java.util.ArrayList;
+
 public class Tienda {
     private String identificador;
     private String ubicacion;
@@ -7,6 +9,20 @@ public class Tienda {
     private int cantCajas;
     private String productoMasVendido;
     private int cantMaxArticulos;
+    
+    private ArrayList<Articulos> ListaArticulos;
+
+    public Tienda(ArrayList<Articulos> ListaArticulos) {
+        this.ListaArticulos = ListaArticulos;
+    }
+
+    public ArrayList<Articulos> getListaArticulos() {
+        return ListaArticulos;
+    }
+
+    public void setListaArticulos(ArrayList<Articulos> ListaArticulos) {
+        this.ListaArticulos = ListaArticulos;
+    }
 
     public Tienda() {
     }
@@ -70,7 +86,7 @@ public class Tienda {
 
     @Override
     public String toString() {
-        return "Tienda{" + "identificador=" + identificador + ", ubicacion=" + ubicacion + ", cantMaxEmpleados=" + cantMaxEmpleados + ", cantCajas=" + cantCajas + ", productoMasVendido=" + productoMasVendido + ", cantMaxArticulos=" + cantMaxArticulos + '}';
+        return "Tienda{" + "identificador=" + identificador + ", ubicacion=" + ubicacion + ", cantMaxEmpleados=" + cantMaxEmpleados + ", cantCajas=" + cantCajas + ", productoMasVendido=" + productoMasVendido + ", cantMaxArticulos=" + cantMaxArticulos + "Lista articulos"+ListaArticulos+'}';
     }
     
     
