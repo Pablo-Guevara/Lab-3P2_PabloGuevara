@@ -155,12 +155,14 @@ public class Lab3P2_PabloGuevara {
                     contraseña = leer.next();
                     if (usuario.equals("admin") && contraseña.equals("1234")) {
                         System.out.println("Administrador ingresó al sistema");
-                        while (opcionAdmin != 5) {
+                        while (opcionAdmin != 7) {
 
                             System.out.println("1.Crear tienda");
                             System.out.println("2.Crear productos");
                             System.out.println("3.Modificar personas");
                             System.out.println("4.Eliminar personas");
+                            System.out.println("5.Modificar producto");
+                            System.out.println("6.Eliminar producto");
                             System.out.println("Elija su opcion: ");
                             opcionAdmin = leer.nextInt();
                             if (opcionAdmin == 1) {
@@ -545,10 +547,204 @@ public class Lab3P2_PabloGuevara {
                                     System.out.println(i + " " + ListaPersonas.get(i));
                                 }
                                 System.out.println("Ingrese posición a eliminar: ");
-                                int posicionMod = leer.nextInt();
-                                ListaPersonas.remove(posicionMod);
+                                int posicionEli = leer.nextInt();
+                                ListaPersonas.remove(posicionEli);
                             }
+                            
+                            if (opcionAdmin==5) {
+                                for (int i = 0; i < ListaArticulos.size(); i++) {
+                                    System.out.println(i + " " + ListaArticulos.get(i));
+                                }
+                                System.out.println("Ingrese posición a modificar: ");
+                                int posicionMod = leer.nextInt();
+                                //MODIFICAR TELEVISORES
+                                if (ListaArticulos.get(posicionMod).getClass().getSimpleName().equals("Televisores")) {
+                                    int numSerie;
+                                    float precio;
+                                    Color color;
+                                    String color2;
+                                    String informacionGarantia;
+                                    float tamañoPantalla;
+                                    int smartTV;
+                                    boolean smart = false;
+                                    String Marca;
+                                    int cantConexiones;
+                                    float grosor;
 
+                                    System.out.println("Ingrese numero de serie");
+                                    numSerie = leer.nextInt();
+
+                                    System.out.println("Ingrese precio: ");
+                                    precio = leer.nextFloat();
+
+                                    System.out.println("Ingrese color: ");
+                                    color2 = leer.next();
+                                    color = Color.getColor(color2);
+
+                                    System.out.println("Ingrese informacion de garantia: ");
+                                    informacionGarantia = leer.next();
+
+                                    System.out.println("Ingrese tamaño de pantalla: ");
+                                    tamañoPantalla = leer.nextFloat();
+                                    System.out.println("¿El televisor es SmartTV?");
+                                    System.out.println("1.Si");
+                                    System.out.println("2.No");
+                                    smartTV = leer.nextInt();
+                                    if (smartTV == 1) {
+                                        smart = true;
+                                    }
+                                    if (smartTV == 2) {
+                                        smart = false;
+                                    }
+
+                                    System.out.println("Ingrese marca del televisor: ");
+                                    Marca = leer.next();
+
+                                    System.out.println("Ingrese cantidad de conexiones: ");
+                                    cantConexiones = leer.nextInt();
+
+                                    System.out.println("Ingrese grosor del televisor: ");
+                                    grosor = leer.nextFloat();
+
+                                    ListaArticulos.add(posicionMod, new Televisores(tamañoPantalla, smart, Marca, cantConexiones, grosor, numSerie, precio, color, informacionGarantia));
+                                }
+                                //FIN MODIFICAR TELEVISORES
+                                
+                                if (ListaArticulos.get(posicionMod).getClass().getSimpleName().equals("Consolas")){
+                                    int numSerie;
+                                    float precio;
+                                    Color color;
+                                    String color2;
+                                    String informacionGarantia;
+                                    String marca;
+                                    int cantAlmacenamiento;
+                                    int cantControles;
+                                    int numAccesorios;
+                                    String infoTarjetaVideo;
+
+                                    System.out.println("Ingrese numero de serie");
+                                    numSerie = leer.nextInt();
+
+                                    System.out.println("Ingrese precio: ");
+                                    precio = leer.nextFloat();
+
+                                    System.out.println("Ingrese color: ");
+                                    color2 = leer.next();
+                                    color = Color.getColor(color2);
+
+                                    System.out.println("Ingrese informacion de garantia: ");
+                                    informacionGarantia = leer.next();
+
+                                    System.out.println("Ingrese marca del televisor: ");
+                                    marca = leer.next();
+
+                                    System.out.println("Ingrese cantidad de almacenamiento: ");
+                                    cantAlmacenamiento = leer.nextInt();
+
+                                    System.out.println("Ingrese cantidad de controles: ");
+                                    cantControles = leer.nextInt();
+
+                                    System.out.println("Ingrese numero de accesorios: ");
+                                    numAccesorios = leer.nextInt();
+
+                                    System.out.println("Ingrese informacion de la tarjeta de video: ");
+                                    infoTarjetaVideo = leer.next();
+
+                                    ListaArticulos.add(posicionMod, new Consolas(marca, cantAlmacenamiento, cantControles, numAccesorios, infoTarjetaVideo, numSerie, precio, color, informacionGarantia));
+                                }
+                                
+                                if (ListaArticulos.get(posicionMod).getClass().getSimpleName().equals("EquiposSonido")){
+                                    int numSerie;
+                                    float precio;
+                                    Color color;
+                                    String color2;
+                                    String informacionGarantia;
+                                    int cantAltavoces;
+                                    float potenciaMax;
+                                    int cantPuertosAux;
+                                    int cantDiscosSopor;
+                                    int cantPuertosUSB;
+
+                                    System.out.println("Ingrese numero de serie");
+                                    numSerie = leer.nextInt();
+
+                                    System.out.println("Ingrese precio: ");
+                                    precio = leer.nextFloat();
+
+                                    System.out.println("Ingrese color: ");
+                                    color2 = leer.next();
+                                    color = Color.getColor(color2);
+
+                                    System.out.println("Ingrese informacion de garantia: ");
+                                    informacionGarantia = leer.next();
+
+                                    System.out.println("Ingrese cantidad de altavoces: ");
+                                    cantAltavoces = leer.nextInt();
+
+                                    System.out.println("Ingrese potencia máxima: ");
+                                    potenciaMax = leer.nextFloat();
+
+                                    System.out.println("Ingrese cantidad de puertos auxiliares: ");
+                                    cantPuertosAux = leer.nextInt();
+
+                                    System.out.println("Ingrese cantidad de discos que soporta: ");
+                                    cantDiscosSopor = leer.nextInt();
+
+                                    System.out.println("Ingrese cantidad de puertos usb: ");
+                                    cantPuertosUSB = leer.nextInt();
+
+                                    ListaArticulos.add(posicionMod, new EquiposSonido(cantAltavoces, potenciaMax, cantPuertosAux, cantDiscosSopor, cantPuertosUSB, numSerie, precio, color, informacionGarantia));
+
+                                }
+                                
+                                if (ListaArticulos.get(posicionMod).getClass().getSimpleName().equals("TeatrosEnCasa")){
+                                    int numSerie;
+                                    float precio;
+                                    Color color;
+                                    String color2;
+                                    String informacionGarantia;
+                                    int cantAltavoces;
+                                    int cantDiscBR;
+                                    String infoLimpieza;
+                                    String infoLectorDisco;
+
+                                    System.out.println("Ingrese numero de serie");
+                                    numSerie = leer.nextInt();
+
+                                    System.out.println("Ingrese precio: ");
+                                    precio = leer.nextFloat();
+
+                                    System.out.println("Ingrese color: ");
+                                    color2 = leer.next();
+                                    color = Color.getColor(color2);
+
+                                    System.out.println("Ingrese información de garantia: ");
+                                    informacionGarantia = leer.next();
+
+                                    System.out.println("Ingrese cantidad de altavoces: ");
+                                    cantAltavoces = leer.nextInt();
+
+                                    System.out.println("Ingrese cantidad de Discos Blue Ray: ");
+                                    cantDiscBR = leer.nextInt();
+
+                                    System.out.println("Ingrese información de limpieza: ");
+                                    infoLimpieza = leer.next();
+
+                                    System.out.println("Ingrese información del lector del disco duro: ");
+                                    infoLectorDisco = leer.next();
+
+                                    ListaArticulos.add(posicionMod, new TeatrosEnCasa(cantAltavoces, cantDiscBR, infoLimpieza, infoLectorDisco, numSerie, precio, color, informacionGarantia));
+                                }
+                            }
+                            
+                            if (opcionAdmin == 6) {
+                                for (int i = 0; i < ListaArticulos.size(); i++) {
+                                    System.out.println(i + " " + ListaArticulos.get(i));
+                                }
+                                System.out.println("Ingrese posición a eliminar: ");
+                                int posicionEli = leer.nextInt();
+                                ListaArticulos.remove(posicionEli);
+                            }
                         }
                     } else {
                         for (int i = 0; i < ListaPersonas.size(); i++) {
