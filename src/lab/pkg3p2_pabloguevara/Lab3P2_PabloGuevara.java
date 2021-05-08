@@ -756,6 +756,24 @@ public class Lab3P2_PabloGuevara {
 
                                 if (ListaPersonas.get(i).getClass().getSimpleName().equals("Cajero")) {
                                     System.out.println("Bienvenido al sistema: " + ListaPersonas.get(i).getClass().getSimpleName());
+                                    int cicloCajero=0;
+                                    while(cicloCajero!=3){
+                                        System.out.println("1.Listar mi información");
+                                        System.out.println("2.Mostrar articulos");
+                                        System.out.println("3.Cerrar sesión");
+                                        cicloCajero=leer.nextInt();
+                                        
+                                        if (cicloCajero==1) {
+                                            System.out.println("INFORMACION CAJERO");
+                                            System.out.println(ListaPersonas.get(i));
+                                        }
+                                        
+                                        if (cicloCajero==2) {
+                                            System.out.println("Articulos");
+                                            System.out.println(ListaArticulos);
+                                        }
+                                    }
+                             
                                 }
 
                                 if (ListaPersonas.get(i).getClass().getSimpleName().equals("Supervisor")) {
