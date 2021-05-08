@@ -769,7 +769,7 @@ public class Lab3P2_PabloGuevara {
                                         }
                                         
                                         if (cicloCajero==2) {
-                                            System.out.println("Articulos");
+                                            System.out.println("Lista Articulos");
                                             System.out.println(ListaArticulos);
                                         }
                                     }
@@ -782,6 +782,63 @@ public class Lab3P2_PabloGuevara {
 
                                 if (ListaPersonas.get(i).getClass().getSimpleName().equals("AsesorFinanciero")) {
                                     System.out.println("Bienvenido al sistema: " + ListaPersonas.get(i).getClass().getSimpleName());
+                                int cicloAF=0;
+                                    while(cicloAF!=5){
+                                        System.out.println("1.Listar mi información");
+                                        System.out.println("2.Modificar mi informacion");
+                                        System.out.println("3.Listar cajeros");
+                                        System.out.println("4.Listar supervisores");
+                                        System.out.println("5.Cerrar sesión");
+                                        cicloAF=leer.nextInt();
+                                        
+                                        if (cicloAF==1) {
+                                            System.out.println("Informacion asesor financiero");
+                                            System.out.println(ListaPersonas.get(i));
+                                        }
+                                        if (cicloAF==2) {
+                                            String rango = "Asesor financiero";
+                                    String nombre;
+                                    String apellido;
+                                    float salario;
+                                    String nacionalidad;
+
+                                    //ArrayList<Cajero> cajerosSupervisa = new ArrayList();
+                                    System.out.println("Ingrese nuevo nombre de usuario: ");
+                                    usuario = leer.next();
+
+                                    System.out.println("Ingrese nueva contraseña: ");
+                                    contraseña = leer.next();
+                                    System.out.println("Ingrese su nombre: ");
+                                    nombre = leer.next();
+                                    System.out.println("Ingrese apellido: ");
+                                    apellido = leer.next();
+                                    System.out.println("Ingrese su salario: ");
+                                    salario = leer.nextFloat();
+                                    System.out.println("Ingrese su nacionalidad: ");
+                                    nacionalidad = leer.next();
+
+                                    ListaPersonas.add(i, new AsesorFinanciero(nombre, apellido, salario, nacionalidad, rango, usuario, contraseña));
+                                    System.out.println("USUARIO ASESOR FINANCIERO MODIFICADO EXITOSAMENTE");
+                                        }
+                                        
+                                        if (cicloAF==3) {
+                                            System.out.println("Listar cajeros");
+                                            for (int j = 0; j < ListaPersonas.size(); j++) {
+                                                if (ListaPersonas.get(i).getClass().getSimpleName().equals("Cajero")) {
+                                                    System.out.println(ListaPersonas.get(i));
+                                                }
+                                            }
+                                        }
+                                        
+                                        if (cicloAF==4) {
+                                            System.out.println("Listar supervisores");
+                                            for (int j = 0; j < ListaPersonas.size(); j++) {
+                                                if (ListaPersonas.get(i).getClass().getSimpleName().equals("Supervisor")) {
+                                                    System.out.println(ListaPersonas.get(i));
+                                                }
+                                            }
+                                        }
+                                    
                                 }
 
                             }
@@ -797,5 +854,5 @@ public class Lab3P2_PabloGuevara {
         }
 
     }
-
+    }
 }
