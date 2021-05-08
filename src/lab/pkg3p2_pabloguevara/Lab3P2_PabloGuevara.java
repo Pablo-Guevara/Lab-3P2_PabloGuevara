@@ -512,7 +512,7 @@ public class Lab3P2_PabloGuevara {
                                     nacionalidad = leer.next();
 
                                     ListaPersonas.add(posicionMod, new Supervisor(nombre, apellido, salario, nacionalidad, rango, usuario, contraseña));
-                                    System.out.println("USUARIO SUPERVISOR Modificadi EXITOSAMENTE");
+                                    System.out.println("USUARIO SUPERVISOR Modificado EXITOSAMENTE");
                                 }
 
                                 if (ListaPersonas.get(posicionMod).getClass().getSimpleName().equals("AsesorFinanciero")) {
@@ -550,8 +550,8 @@ public class Lab3P2_PabloGuevara {
                                 int posicionEli = leer.nextInt();
                                 ListaPersonas.remove(posicionEli);
                             }
-                            
-                            if (opcionAdmin==5) {
+
+                            if (opcionAdmin == 5) {
                                 for (int i = 0; i < ListaArticulos.size(); i++) {
                                     System.out.println(i + " " + ListaArticulos.get(i));
                                 }
@@ -609,8 +609,8 @@ public class Lab3P2_PabloGuevara {
                                     ListaArticulos.add(posicionMod, new Televisores(tamañoPantalla, smart, Marca, cantConexiones, grosor, numSerie, precio, color, informacionGarantia));
                                 }
                                 //FIN MODIFICAR TELEVISORES
-                                
-                                if (ListaArticulos.get(posicionMod).getClass().getSimpleName().equals("Consolas")){
+
+                                if (ListaArticulos.get(posicionMod).getClass().getSimpleName().equals("Consolas")) {
                                     int numSerie;
                                     float precio;
                                     Color color;
@@ -652,8 +652,8 @@ public class Lab3P2_PabloGuevara {
 
                                     ListaArticulos.add(posicionMod, new Consolas(marca, cantAlmacenamiento, cantControles, numAccesorios, infoTarjetaVideo, numSerie, precio, color, informacionGarantia));
                                 }
-                                
-                                if (ListaArticulos.get(posicionMod).getClass().getSimpleName().equals("EquiposSonido")){
+
+                                if (ListaArticulos.get(posicionMod).getClass().getSimpleName().equals("EquiposSonido")) {
                                     int numSerie;
                                     float precio;
                                     Color color;
@@ -696,8 +696,8 @@ public class Lab3P2_PabloGuevara {
                                     ListaArticulos.add(posicionMod, new EquiposSonido(cantAltavoces, potenciaMax, cantPuertosAux, cantDiscosSopor, cantPuertosUSB, numSerie, precio, color, informacionGarantia));
 
                                 }
-                                
-                                if (ListaArticulos.get(posicionMod).getClass().getSimpleName().equals("TeatrosEnCasa")){
+
+                                if (ListaArticulos.get(posicionMod).getClass().getSimpleName().equals("TeatrosEnCasa")) {
                                     int numSerie;
                                     float precio;
                                     Color color;
@@ -736,7 +736,7 @@ public class Lab3P2_PabloGuevara {
                                     ListaArticulos.add(posicionMod, new TeatrosEnCasa(cantAltavoces, cantDiscBR, infoLimpieza, infoLectorDisco, numSerie, precio, color, informacionGarantia));
                                 }
                             }
-                            
+
                             if (opcionAdmin == 6) {
                                 for (int i = 0; i < ListaArticulos.size(); i++) {
                                     System.out.println(i + " " + ListaArticulos.get(i));
@@ -752,107 +752,159 @@ public class Lab3P2_PabloGuevara {
                                 ingreso = 1;
                                 if (ListaPersonas.get(i).getClass().getSimpleName().equals("Clientes")) {
                                     System.out.println("Bienvenido al sistema: " + ListaPersonas.get(i).getClass().getSimpleName());
-                                }
-
-                                if (ListaPersonas.get(i).getClass().getSimpleName().equals("Cajero")) {
-                                    System.out.println("Bienvenido al sistema: " + ListaPersonas.get(i).getClass().getSimpleName());
-                                    int cicloCajero=0;
-                                    while(cicloCajero!=3){
+                                    int cicloCli = 0;
+                                    while (cicloCli != 3) {
                                         System.out.println("1.Listar mi información");
-                                        System.out.println("2.Mostrar articulos");
+                                        System.out.println("2.elimar cuenta");
                                         System.out.println("3.Cerrar sesión");
-                                        cicloCajero=leer.nextInt();
-                                        
-                                        if (cicloCajero==1) {
-                                            System.out.println("INFORMACION CAJERO");
+                                        cicloCli = leer.nextInt();
+                                        if (cicloCli == 1) {
                                             System.out.println(ListaPersonas.get(i));
                                         }
-                                        
-                                        if (cicloCajero==2) {
-                                            System.out.println("Lista Articulos");
-                                            System.out.println(ListaArticulos);
+
+                                        if (cicloCli == 2) {
+                                            ListaPersonas.remove(i);
                                         }
                                     }
-                             
-                                }
 
-                                if (ListaPersonas.get(i).getClass().getSimpleName().equals("Supervisor")) {
-                                    System.out.println("Bienvenido al sistema: " + ListaPersonas.get(i).getClass().getSimpleName());
-                                }
+                                    if (ListaPersonas.get(i).getClass().getSimpleName().equals("Cajero")) {
+                                        System.out.println("Bienvenido al sistema: " + ListaPersonas.get(i).getClass().getSimpleName());
+                                        int cicloCajero = 0;
+                                        while (cicloCajero != 3) {
+                                            System.out.println("1.Listar mi información");
+                                            System.out.println("2.Mostrar articulos");
+                                            System.out.println("3.Cerrar sesión");
+                                            cicloCajero = leer.nextInt();
 
-                                if (ListaPersonas.get(i).getClass().getSimpleName().equals("AsesorFinanciero")) {
-                                    System.out.println("Bienvenido al sistema: " + ListaPersonas.get(i).getClass().getSimpleName());
-                                int cicloAF=0;
-                                    while(cicloAF!=5){
-                                        System.out.println("1.Listar mi información");
-                                        System.out.println("2.Modificar mi informacion");
-                                        System.out.println("3.Listar cajeros");
-                                        System.out.println("4.Listar supervisores");
-                                        System.out.println("5.Cerrar sesión");
-                                        cicloAF=leer.nextInt();
-                                        
-                                        if (cicloAF==1) {
-                                            System.out.println("Informacion asesor financiero");
-                                            System.out.println(ListaPersonas.get(i));
-                                        }
-                                        if (cicloAF==2) {
-                                            String rango = "Asesor financiero";
-                                    String nombre;
-                                    String apellido;
-                                    float salario;
-                                    String nacionalidad;
+                                            if (cicloCajero == 1) {
+                                                System.out.println("INFORMACION CAJERO");
+                                                System.out.println(ListaPersonas.get(i));
+                                            }
 
-                                    //ArrayList<Cajero> cajerosSupervisa = new ArrayList();
-                                    System.out.println("Ingrese nuevo nombre de usuario: ");
-                                    usuario = leer.next();
-
-                                    System.out.println("Ingrese nueva contraseña: ");
-                                    contraseña = leer.next();
-                                    System.out.println("Ingrese su nombre: ");
-                                    nombre = leer.next();
-                                    System.out.println("Ingrese apellido: ");
-                                    apellido = leer.next();
-                                    System.out.println("Ingrese su salario: ");
-                                    salario = leer.nextFloat();
-                                    System.out.println("Ingrese su nacionalidad: ");
-                                    nacionalidad = leer.next();
-
-                                    ListaPersonas.add(i, new AsesorFinanciero(nombre, apellido, salario, nacionalidad, rango, usuario, contraseña));
-                                    System.out.println("USUARIO ASESOR FINANCIERO MODIFICADO EXITOSAMENTE");
-                                        }
-                                        
-                                        if (cicloAF==3) {
-                                            System.out.println("Listar cajeros");
-                                            for (int j = 0; j < ListaPersonas.size(); j++) {
-                                                if (ListaPersonas.get(i).getClass().getSimpleName().equals("Cajero")) {
-                                                    System.out.println(ListaPersonas.get(i));
-                                                }
+                                            if (cicloCajero == 2) {
+                                                System.out.println("Lista Articulos");
+                                                System.out.println(ListaArticulos);
                                             }
                                         }
-                                        
-                                        if (cicloAF==4) {
-                                            System.out.println("Listar supervisores");
-                                            for (int j = 0; j < ListaPersonas.size(); j++) {
-                                                if (ListaPersonas.get(i).getClass().getSimpleName().equals("Supervisor")) {
-                                                    System.out.println(ListaPersonas.get(i));
+
+                                    }
+
+                                    if (ListaPersonas.get(i).getClass().getSimpleName().equals("Supervisor")) {
+                                        System.out.println("Bienvenido al sistema: " + ListaPersonas.get(i).getClass().getSimpleName());
+
+                                        int cicloSupervisor = 0;
+                                        while (cicloSupervisor != 4) {
+                                            System.out.println("1.Listar cajeros");
+                                            System.out.println("2.Modificar mi informacion");
+                                            System.out.println("3.Eliminar cajeros/asesor financiero");
+                                            System.out.println("4.Cerrar sesión");
+                                            cicloSupervisor = leer.nextInt();
+
+                                            if (cicloSupervisor == 1) {
+                                                System.out.println("Listar cajeros");
+                                                for (int j = 0; j < ListaPersonas.size(); j++) {
+                                                    if (ListaPersonas.get(i).getClass().getSimpleName().equals("Cajero")) {
+                                                        System.out.println(ListaPersonas.get(i));
+                                                    }
                                                 }
                                             }
+
+                                            if (cicloSupervisor == 2) {
+                                                System.out.println("Listar asesores financieros");
+                                                for (int j = 0; j < ListaPersonas.size(); j++) {
+                                                    if (ListaPersonas.get(i).getClass().getSimpleName().equals("AsesorFinanciero")) {
+                                                        System.out.println(ListaPersonas.get(i));
+                                                    }
+                                                }
+
+                                                if (opcionAdmin == 4) {
+                                                    for (int j = 0; j < ListaPersonas.size(); j++) {
+                                                        System.out.println(j + " " + ListaPersonas.get(j));
+                                                    }
+                                                    System.out.println("Ingrese posición a eliminar: ");
+                                                    int posicionEli = leer.nextInt();
+                                                    ListaPersonas.remove(posicionEli);
+                                                }
+                                            }
+
                                         }
-                                    
+
+                                    }
+
+                                    if (ListaPersonas.get(i).getClass().getSimpleName().equals("AsesorFinanciero")) {
+                                        System.out.println("Bienvenido al sistema: " + ListaPersonas.get(i).getClass().getSimpleName());
+                                        int cicloAF = 0;
+                                        while (cicloAF != 5) {
+                                            System.out.println("1.Listar mi información");
+                                            System.out.println("2.Modificar mi informacion");
+                                            System.out.println("3.Listar cajeros");
+                                            System.out.println("4.Listar supervisores");
+                                            System.out.println("5.Cerrar sesión");
+                                            cicloAF = leer.nextInt();
+
+                                            if (cicloAF == 1) {
+                                                System.out.println("Informacion asesor financiero");
+                                                System.out.println(ListaPersonas.get(i));
+                                            }
+                                            if (cicloAF == 2) {
+                                                String rango = "Asesor financiero";
+                                                String nombre;
+                                                String apellido;
+                                                float salario;
+                                                String nacionalidad;
+
+                                                //ArrayList<Cajero> cajerosSupervisa = new ArrayList();
+                                                System.out.println("Ingrese nuevo nombre de usuario: ");
+                                                usuario = leer.next();
+
+                                                System.out.println("Ingrese nueva contraseña: ");
+                                                contraseña = leer.next();
+                                                System.out.println("Ingrese su nombre: ");
+                                                nombre = leer.next();
+                                                System.out.println("Ingrese apellido: ");
+                                                apellido = leer.next();
+                                                System.out.println("Ingrese su salario: ");
+                                                salario = leer.nextFloat();
+                                                System.out.println("Ingrese su nacionalidad: ");
+                                                nacionalidad = leer.next();
+
+                                                ListaPersonas.add(i, new AsesorFinanciero(nombre, apellido, salario, nacionalidad, rango, usuario, contraseña));
+                                                System.out.println("USUARIO ASESOR FINANCIERO MODIFICADO EXITOSAMENTE");
+                                            }
+
+                                            if (cicloAF == 3) {
+                                                System.out.println("Listar cajeros");
+                                                for (int j = 0; j < ListaPersonas.size(); j++) {
+                                                    if (ListaPersonas.get(i).getClass().getSimpleName().equals("Cajero")) {
+                                                        System.out.println(ListaPersonas.get(i));
+                                                    }
+                                                }
+                                            }
+
+                                            if (cicloAF == 4) {
+                                                System.out.println("Listar supervisores");
+                                                for (int j = 0; j < ListaPersonas.size(); j++) {
+                                                    if (ListaPersonas.get(i).getClass().getSimpleName().equals("Supervisor")) {
+                                                        System.out.println(ListaPersonas.get(i));
+                                                    }
+                                                }
+                                            }
+
+                                        }
+
+                                    }
+
+                                }
+                                if (ingreso == 0) {
+                                    System.out.println("Usuario o contraseña no válidos");
                                 }
 
                             }
-
                         }
-                        if (ingreso == 0) {
-                            System.out.println("Usuario o contraseña no válidos");
-                        }
-
                     }
                 }
+
             }
         }
-
-    }
     }
 }
